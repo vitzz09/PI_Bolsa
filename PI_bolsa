@@ -1,0 +1,34 @@
+
+import customtkinter as ctk
+
+
+import pandas as pd
+import plotly.express as px
+
+df = pd.DataFrame({
+    "nome": ["Ana", "João", "Maria"],
+    "idade": [23, 35, 29]
+})
+
+fig = px.bar(df, x="nome", y="idade")
+fig.show()
+
+ctk.set_appearance_mode("dark")       # "dark", "light", "system"
+ctk.set_default_color_theme("blue")   # "blue", "green", "dark-blue"
+
+
+
+# Janela principal
+app = ctk.CTk()
+app.title("PI_BOLSA")
+app.geometry("900x700")
+
+
+label = ctk.CTkLabel(app, text="Olá, mundo!", font=("Arial", 20))
+label.pack()
+
+
+app.mainloop()
+
+
+
